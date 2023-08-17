@@ -25,6 +25,7 @@ public class PostAPITest {
 
     @Test
     public void testPostCall() {
+        System.out.println("\nExecuting POST Call for API Test !!\n");
         String requestBody = "{\n" +
         "    \"name\": \"Apple MacBook Pro 16\",\n" +
         "    \"data\": {\n" +
@@ -35,16 +36,23 @@ public class PostAPITest {
         "    }\n" +
         "}";
 
+        System.out.println("POST Request Body: " + requestBody);
+        
+
         Response response = given()
                 .contentType(ContentType.JSON)
                 .body(requestBody)
                 .post("/objects");
 
+       
+
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 200, "Response status code doesn't match expected value");
 
         String responseBody = response.getBody().asString();
-        System.out.println("POST Response Body: " + responseBody);
+        System.out.println("\nPOST Response Status Code: " + statusCode + "\n");
+        System.out.println("\nPOST Response Body: " + responseBody + "\n");
+
 
         // Validate some of the response fields
         String expectedName = "Apple MacBook Pro 16";
@@ -58,6 +66,7 @@ public class PostAPITest {
         Assert.assertTrue(responseBody.contains("\"price\":" + expectedPrice), "Price value not found in the response");
         Assert.assertTrue(responseBody.contains("\"CPU model\":\"" + expectedCPUModel + "\""), "CPU model value not found in the response");
         Assert.assertTrue(responseBody.contains("\"Hard disk size\":\"" + expectedHardDiskSize + "\""), "Hard disk size value not found in the response");
+
 
         // Validate the createdAt field using a dynamic approach
 

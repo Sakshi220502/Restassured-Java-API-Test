@@ -18,6 +18,7 @@ public class GetAPITest {
 
     @Test
     public void testGetCall() {
+        System.out.println("\nExecuting GET call for API Test !!\n");
         Response response = given()
         .get("/objects/7");
 
@@ -25,7 +26,8 @@ public class GetAPITest {
         Assert.assertEquals(statusCode, 200, "Response status code doesn't match expected value");
 
         String responseBody = response.getBody().asString();
-        System.out.println("GET Response Body: " + responseBody);
+        System.out.println("\nGET Response Status Code: " + statusCode + "\n");
+        System.out.println("\nGET Response Body: " + responseBody + "\n");
 
         // Validate specific values using JSONPath
         String expectedName = "Apple MacBook Pro 16";
