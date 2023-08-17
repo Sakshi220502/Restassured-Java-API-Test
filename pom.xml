@@ -31,7 +31,7 @@
 <dependency>
     <groupId>io.rest-assured</groupId>
     <artifactId>json-path</artifactId>
-    <version>5.3.1</version>
+    <version>4.3.1</version>
     <scope>test</scope>
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
@@ -49,7 +49,7 @@
 <dependency>
              <groupId>io.rest-assured</groupId>
    <artifactId>rest-assured</artifactId>
-   <version>3.0.3</version>
+   <version>4.3.1</version>
         </dependency>
   </dependencies>
 </project>
